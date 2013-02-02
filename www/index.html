@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>DrupalCon</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="user-scalable = no"> <!--No zoom-->
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/tes/common.css" />
+
+    <link href="css/style-phone.css" rel="stylesheet" type="text/css" media="only screen and (min-width:0px) and (max-width:999px)">
+    <link href="css/style-tablet.css" rel="stylesheet" type="text/css" media="only screen and (min-width:1000px)">
+    <script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+    
+</head> 
+<body> 
+
+<div data-role="page" data-theme="c" class="app" id="main">
+
+	<div data-role="header"data-position="fixed">
+		<h1>DrupalCon</h1>
+        <a href="#" id="switchFav" data-icon="star" data-iconpos="notext" >Favourites</a>
+        <a href="#help" id="getHelp" data-icon="info" data-iconpos="notext" data-transition="fade">Help</a>
+	</div><!-- /header -->
+
+	<div data-role="content" id="deviceready">
+        <!--<p class="event listening">Connecting to Device</p>-->
+        <p class="event received">
+        <!--
+        <div data-role="controlgroup" data-type="horizontal" data-mini="true" class="sort-control">
+            <a href="index.html" data-role="button" class="ui-btn-active">Date</a>
+            <a href="index.html" data-role="button">Name</a>
+            <a href="index.html" data-role="button">Track</a>
+            <a href="index.html" data-role="button">Room</a>
+        </div>--><!-- <a href="index.html" data-role="button">Experience</a> /contro group -->
+        <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="sort-select">
+            <input type="radio" name="radio-choice-b" id="radio-choice-c" value="date" checked="checked" />
+            <label for="radio-choice-c">Date</label>
+            <input type="radio" name="radio-choice-b" id="radio-choice-d" value="title" />
+            <label for="radio-choice-d">Title</label>
+            <input type="radio" name="radio-choice-b" id="radio-choice-e" value="track" />
+            <label for="radio-choice-e">Track</label>
+            <input type="radio" name="radio-choice-b" id="radio-choice-f" value="room" />
+            <label for="radio-choice-f">Room</label>
+        </fieldset>
+        
+		<ul data-role="listview" data-inset="true" id="feedList" data-split-icon="star" data-dividertheme="d">
+			<li><a href="#sessionpage" data-transition="fade">
+                <h3>Building Drupal Sites</h3>
+				<p><strong>You've been invited to a meeting at Filament Group in Boston, MA</strong> by Geremy Irons</p>
+				<p class="ui-li-aside"><strong>Fri, 7-Feb-2013, 18:24</strong>PM</p></a>
+                <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop" data-theme="b" id="fav-0" class="btn-favourite">Add to favourites</a>
+			</li>
+		</ul>
+        </p>
+ 
+	</div><!-- /content -->
+   
+
+    <!--
+    <div data-role="footer">		
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="grid">About</a></li>
+				<li><a href="#" data-icon="star" class="ui-btn-active">My DrupalCon</a></li>
+				<li><a href="#" data-icon="gear">Setup</a></li>
+            </ul>
+        </div>
+    </div>
+-->
+</div><!-- /page -->
+
+<div data-role="page" data-theme="c" id="help" data-add-back-btn="true">
+
+	<div data-role="header">
+		<h1>Help</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" id="helpmenu">
+		<ul data-role="listview" data-inset="true" id="helpmenuFeed">
+			<li><a href="#">DrupalCon</a></li>
+            <li><a href="#">Check for updates</a></li>
+            <li><a href="#">About application</a></li>
+       	</ul>
+    </div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" data-theme="c" id="sessionpage" data-add-back-btn="true" session="0">
+
+	<div data-role="header">
+		<h1>Session</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" id="sessiondata">
+		<ul data-role="listview" data-inset="true" id="sessiondatalist">
+			<li>Loading...</li>
+       	</ul>
+    </div><!-- /footer -->
+
+</div><!-- /page -->
+
+<div data-role="page" data-theme="c" id="infopage" data-add-back-btn="true" pageid="0">
+
+	<div data-role="header">
+		<h1>DrupalCon</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" id="infodata">
+		<ul data-role="listview" data-inset="true" id="infodatalist">
+			<li>Loading...</li>
+       	</ul>
+    </div><!-- /footer -->
+
+</div><!-- /page -->
+
+<script type="text/javascript" src="cordova-2.2.0.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+	app.initialize();
+</script>
+
+</body>
+</html>

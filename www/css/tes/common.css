@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.list-one-line li {
+	list-style-image: none;
+	list-style-type: none;
+	display: inline-block;
+}
